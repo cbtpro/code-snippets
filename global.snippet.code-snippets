@@ -1,0 +1,75 @@
+{
+	// Place your 全局 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+  // 把你的全局片段放在这里。每个代码段都在一个代码段名称下定义，并具有范围、前缀、正文和
+  // 描述。在范围字段中添加代码片段适用的语言id，这些语言id以逗号分隔。如果作用域为空或省略，
+  // 则该代码段将应用于所有语言。前缀是用来触发代码段的，主体将被扩展和插入。
+  // 可能的变量有:$1，$2用于制表位，$0用于最终的光标位置，${1:label}， ${2:another}用于占位符。连接具有相同id的占位符。
+	// 举个例子:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+  "vue2 template": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "vue2",
+    "body": [
+      "<template>",
+      "  <view class=\"$1\">",
+      "    <slot name=\"default\"></slot>",
+      "  </view>",
+      "</template>",
+      "",
+      "<script>",
+      "export default {",
+      "  name: '$1',",
+      "  data() {",
+      "    return {",
+      "    }",
+      "  },",
+      "}",
+      "</script>",
+      "",
+      "<style lang=\"less\" scoped>",
+      ".$1 {",
+      "  width: 100%;",
+      "  background-color: rgba(0, 0, 0, 0.2);",
+      "}",
+      "</style>",
+      "",
+    ]
+  },
+  "taro template": {
+    "prefix": "taro",
+    "body": [
+      "import Taro from '@tarojs/taro';",
+      "import { View } from '@tarojs/components';",
+      "",
+      "import styles from './$1.module.scss';",
+      "",
+      "interface Props {",
+      "  title: number;",
+      "};",
+      "const Index = (props: Props) => {",
+      "  const { title } = props;",
+      "  return <View className={styles.container}>{title}</View>;",
+      "};",
+      "",
+      "Index.defaultProps = {",
+      "  title: '没有数据',",
+      "};",
+      "export default Index;",
+      ""
+    ],
+    "description": ""
+  },
+}
